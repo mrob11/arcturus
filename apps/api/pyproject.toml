@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "api"
+name = "webevent-platform-api"
 version = "0.1.0"
 description = ""
 authors = ["Mike Robinson <mike.robinson@globacore.com>"]
@@ -9,7 +9,9 @@ python = "^3.9"
 fastapi = "^0.68.1"
 uvicorn = "^0.15.0"
 sqlmodel = "^0.0.4"
-psycopg2 = "^2.9.1"
+pydantic = {extras = ["email"], version = "^1.8.2"}
+fastapi-pagination = {extras = ["sqlmodel"], version = "^0.9.0"}
+psycopg2-binary = "^2.9.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

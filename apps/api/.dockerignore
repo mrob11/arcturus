@@ -1,0 +1,5 @@
+.devcontainer
+.pytest_cache
+.venv
+.vscode
+README.md

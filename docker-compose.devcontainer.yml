@@ -4,13 +4,20 @@ services:
   api:
     build:
       context: ./apps/api
-      dockerfile: ./Dockerfile
+      dockerfile: ./.devcontainer/Dockerfile
+      args:
+        VARIANT: 3
+        NODE_VERSION: "lts/*"
+        USER_UID: 1000
+        USER_GID: 1000
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/postgres
-    depends_on:
-      - db
-    ports:
-      - 8000:8000
+    volumes:
+      - .:/workspace:cached
+
+    command: sleep infinity
+    network_mode: service:db
+    user: vscode
 
   db:
     image: postgres:latest
