@@ -36,5 +36,4 @@ ENV \
 
 ENV PATH="$POETRY_HOME/bin:$PATH"
 
-RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python \
-    && chmod 755 $POETRY_HOME/bin/poetry
+RUN pip install poetry

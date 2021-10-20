@@ -3,9 +3,12 @@
 // Update the VARIANT arg in docker-compose.yml to pick a Python version: 3, 3.8, 3.7, 3.6
 {
   "name": "Python 3 & PostgreSQL",
-  "dockerComposeFile": ["../../../docker-compose.devcontainer.yml"],
+  "dockerComposeFile": [
+    "../../docker-compose.yml",
+    "../../docker-compose.devcontainer.yml"
+  ],
   "service": "api",
-  "workspaceFolder": "/workspace/apps/api",
+  "workspaceFolder": "/workspace/api",
   // Set *default* container specific settings.json values on container create.
   "settings": {
     "sqltools.connections": [
@@ -21,13 +24,13 @@
       }
     ],
     "python.poetryPath": "poetry",
-    "python.pythonPath": "/workspace/apps/api/.venv/bin/python",
+    "python.pythonPath": "/workspace/api/.venv/bin/python",
     "python.languageServer": "Pylance",
     "python.linting.enabled": true,
     "python.linting.blackEnabled": true,
-    "python.formatting.blackPath": "/workspace/apps/api/.venv/bin/black",
-    "python.linting.flake8Path": "/workspace/apps/api/.venv/bin/flake8",
-    "python.testing.pytestPath": "/workspace/apps/api/.venv/bin/pytest"
+    "python.formatting.blackPath": "/workspace/api/.venv/bin/black",
+    "python.linting.flake8Path": "/workspace/api/.venv/bin/flake8",
+    "python.testing.pytestPath": "/workspace/api/.venv/bin/pytest"
   },
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
